@@ -70,3 +70,20 @@ a {
     font-weight: 600;
     letter-spacing: 2px;
 }
+
+.home-v .img-user img{
+    height: 200px;
+    width: 200px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    overflow: hidden;
+    
+}
+
+.home-v .info-user span{
+    position: absolute;
+    padding-left: 80px;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}

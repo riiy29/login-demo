@@ -72,5 +72,30 @@ class Auth_model extends CI_Model {
 
 		return $this->db->update('user', $data, ['user_id' => $id]);
 	}
+
+    // Register 
+    public function save()
+    {
+        $config['upload_path']          = './assets/img/avatar/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['overwrite']            = true;
+        $config['file_name']            = md5($_FILES["thumbnail"]['name']);
+
+        $this->load->library('upload', $config);
+        
+        if (!$this->upload->do_upload('thumbnail')) {
+            $this->session->set_flashdata('error_upl', 'Gagal Upload Avatar, Silahkan daftar Ulang');
+        } else {
+            $post = $this->input->post();
+            $this->email = $post["email"];
+            $this->nama = $post["name"];
+            $this->password = md5($post['password']);
+            $this->tgl_dibuat = date('Y-m-d H:i:s');
+            $this->avatar = base_url("assets/img/avatar/".$config['file_name']).'.'.pathinfo($_FILES["thumbnail"]['name'], PATHINFO_EXTENSION);
+            return $this->db->insert('user', $this);
+            $this->session->set_flashdata('success', 'Register Berhasil');
+        }
+        
+    }
 }
 
