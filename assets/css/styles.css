@@ -1,0 +1,63 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Login Page Form */
+.login-f {
+    padding: 30px;
+}
+.login-f .img-ill {
+    margin: auto;
+}
+.login-f .img-ill img{ 
+    width: 100%;
+    margin: auto;
+}
+.login-f .text-title {
+    margin-bottom: 50px;
+}
+.login-f .text-title h5 {
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+}
+.login-f .text-title p {
+    color: rgba(0,0, 0, .5);
+    font-weight: 500;
+}
+.login-f .form-custom {
+    margin-bottom: 26px;
+}
+.login-f .form-custom .form-control {
+    padding: 14px 16px 14px 42px;
+    border: 2px solid #000;
+    font-weight: 500;
+    border-radius: 0;
+}
+.login-f .form-custom .form-control:focus {
+    border: 2px solid #6534d9;
+    box-shadow: none;
+}
+.login-f .form-custom i {
+    position: absolute;
+    font-size: 16px;
+    margin-top: 19px;
+    margin-left: 16px;
+    
+}
+
+.login-f .grid-btn .btn-primary {
+    background-color: #6534d9;
+    border-color: #6534d9;
+}
+.login-f .grid-btn .btn {
+    padding: 14px 62px;
+    border-radius: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
