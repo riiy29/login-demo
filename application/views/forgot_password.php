@@ -26,52 +26,35 @@
                                 <div class="text-title">
                                     
 
-                                    <h5>Welcome Back!</h5>
+                                    <h5>Change Password!</h5>
                                     <!-- Register -->
-                                    <span>New User? <a href="register">Sign Up</a> </span>
-                                    <p>Login to continue</p>
+                                    <span> <a href="login">Sign in</a> </span>
+                                    <p>Change Password</p>
                                 </div>
                                 <?php 
-                                    if($this->session->flashdata('error') !='')
-                                    {
-                                        echo '<div class="alert alert-danger" role="alert">';
-                                        echo $this->session->flashdata('error');
-                                        echo '</div>';
-                                    }
-				                ?>
-                               <?php 
                                     if($this->session->flashdata('sukses') !='')
                                     {
-                                        echo '<div class="alert alert-success" role="alert">';
+                                        echo '<div class="alert alert-danger" role="alert">';
                                         echo $this->session->flashdata('sukses');
                                         echo '</div>';
                                     }
 				                ?>
-                                 <?php 
-                                    if($this->session->flashdata('error_upl') !='')
-                                    {
-                                        echo '<div class="alert alert-danger" role="alert">';
-                                        echo $this->session->flashdata('error_upl');
-                                        echo '</div>';
-                                    }
-				                ?>
-                                <form action="<?=base_url('Auth/login')?>" method="POST">
+                               
+                                
+                                <form action="<?=base_url('Forgot_password')?>" method="POST">
                                     <div class="form-custom">
                                         <i class="fa-solid fa-user"></i>
                                         <input type="email" name="email" class="form-control" placeholder="Enter Email" required>      
                                     </div>
-                                    <div class="form-custom mb-5">
-                                        <i class="fa-solid fa-lock"></i>
-                                        <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
-                                    </div>
+                               
                                     <div class="grid-btn">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4 col-12 mb-3">
-                                                <button class="btn btn-primary btn-block text-uppercase" type="submit">Login</button>
+                                                <button class="btn btn-primary btn-block text-uppercase" type="submit">Reset </button>
                                             </div>
 
                                             <div class="col-lg-8 col-md-8 col-12">
-                                                <a href="forgotpassword" class="btn btn-light btn-block text-uppercase"> Forgot Password ?</a>
+                                                <a href="login" class="btn btn-light btn-block text-uppercase"> Back to Login </a>
                                             </div>
                                         </div>
                                     </div>

@@ -97,5 +97,17 @@ class Auth_model extends CI_Model {
         }
         
     }
+
+	// lupa password  
+ 
+    public function updatePassword()
+    {
+		$email = $this->session->userdata('reset_email');
+		$password = md5($this->input->post('password1'));
+        $this->db->where('email', $email);
+        $this->db->update('user', array('password' => $password));
+      
+    }
+
 }
 
