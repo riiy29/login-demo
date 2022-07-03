@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login Demo</title>
 
-    <!-- Vendor CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <!-- style -->
-    <link rel="stylesheet" href="<?=base_url('assets/css/styles.css')?>">
+    <?php $this->load->view('layouts/header')?>
 
   </head>
   <body>
@@ -37,14 +31,22 @@
                                     <span>New User? <a href="register">Sign Up</a> </span>
                                     <p>Login to continue</p>
                                 </div>
-                                <form>
+                                <?php 
+                                    if($this->session->flashdata('error') !='')
+                                    {
+                                        echo '<div class="alert alert-danger" role="alert">';
+                                        echo $this->session->flashdata('error');
+                                        echo '</div>';
+                                    }
+				                ?>
+                                <form action="#" method="POST">
                                     <div class="form-custom">
                                         <i class="fa-solid fa-user"></i>
-                                        <input type="email" class="form-control" placeholder="Enter Email" required>      
+                                        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>      
                                     </div>
                                     <div class="form-custom mb-5">
                                         <i class="fa-solid fa-lock"></i>
-                                        <input type="password" class="form-control" placeholder="Enter Password" required>
+                                        <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
                                     </div>
                                     <div class="grid-btn">
                                         <div class="row">
@@ -65,15 +67,8 @@
             </div>
         </div>
     </section>
-    
-
-
-
   </body>
 
-    <!-- Script JS CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"></script>
+  <?php $this->load->view('layouts/footer')?>
 
 </html>
