@@ -30,7 +30,11 @@
                         <div class="rounded-3">
                             <div class="card-body p-4 p-sm-5">
                                 <div class="text-title">
+                                    
+
                                     <h5>Welcome Back!</h5>
+                                    <!-- Register -->
+                                    <span>New User? <a href="register">Sign Up</a> </span>
                                     <p>Login to continue</p>
                                 </div>
                                 <form>
@@ -44,11 +48,11 @@
                                     </div>
                                     <div class="grid-btn">
                                         <div class="row">
-                                            <div class="col-md-4 col-6">
+                                            <div class="col-lg-4 col-md-4 col-12 mb-3">
                                                 <button class="btn btn-primary btn-block text-uppercase" type="submit">Login</button>
                                             </div>
 
-                                            <div class="col-md-8 col-6">
+                                            <div class="col-lg-8 col-md-8 col-12">
                                                 <a href="forgotpassword" class="btn btn-light btn-block text-uppercase"> Forgot Password ?</a>
                                             </div>
                                         </div>
